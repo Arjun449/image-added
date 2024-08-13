@@ -1,0 +1,192 @@
+/* Global Styles */
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Apply border-box globally */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Color Variables */
+:root {
+  --primary-color: #282c34;
+  --secondary-color: #333;
+  --accent-color: #61dafb;
+  --text-color: #ffffff;
+  --background-color: #f4f4f4;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background-color: var(--primary-color);
+  padding: 10px;
+  color: var(--text-color);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header nav a {
+  color: var(--text-color);
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: var(--secondary-color);
+  /* Added background color */
+  position: fixed;
+  /* Fix sidebar to the leftmost */
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 0 0;
+  padding: 20px;
+}
+
+.sidebar ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+}
+
+/* Card Component */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+}
+
+/* Home Section Update */
+.home-section {
+  position: relative;
+  width: calc(100% - 200px);
+  /* Adjust width to account for fixed sidebar */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+  /* Prevent content from going under the sidebar */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/WhatsApp Image 2024-08-13 at 4.35.57 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.overlay-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+
+.overlay-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.overlay-text p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.overlay-text input[type="email"] {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.overlay-text button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #28a745;
+  /* Changed button color to green */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Ensure these styles are at the bottom so they override previous rules */
+.main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
